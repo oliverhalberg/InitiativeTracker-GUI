@@ -1,1 +1,1 @@
-# InitiativeTracker-GUI
+# Initiative Tracker GUI
