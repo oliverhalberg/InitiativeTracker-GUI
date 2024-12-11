@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Oliver Halberg",
-  "license": "ISC",
+  "license": "GPL-3.0-only",
   "dependencies": {
     "react": "^19.0.0"
   },
