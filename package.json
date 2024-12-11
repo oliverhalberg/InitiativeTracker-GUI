@@ -10,7 +10,8 @@
   "author": "Oliver Halberg",
   "license": "GPL-3.0-only",
   "dependencies": {
-    "react": "^19.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "electron": "^33.2.1"
