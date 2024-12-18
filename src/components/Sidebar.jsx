@@ -1,7 +1,7 @@
-const Sidebar = ({ currentTurn, round, nextTurn }) => {
+const Sidebar = ({ currentTurnName, round, nextTurn }) => {
     return (
         <div>
-            <p>Current turn: {currentTurn}</p>
+            <p>Current turn: {currentTurnName}</p>
             <p>Round: {round}</p>
             <button onClick={() => nextTurn()}>Next Turn</button>
         </div>

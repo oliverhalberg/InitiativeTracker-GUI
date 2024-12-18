@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 // Component imports
 import Turn from './components/Turn';
@@ -29,48 +29,59 @@ const testPlayers = [
 ];
 
 function App() {
-  // Index variable for iterating through Players state
-  const i = 0;
+  // Index state for iterating through Players state
+  const [index, setIndex] = useState(0);
+
+  //useEffect hook to reset the Index state when it goes out of bounds
+  useEffect(() => {
+    
+    if (index === players.length) {
+      //if we've reached the end of the list of turns, reset the index variable and increase the round counter
+      setIndex(0);
+      setRound(round + 1);
+    }
+  });
 
   // Players state
-  const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState(testPlayers); //starts prefilled for testing
 
   // Round state
   const [round, setRound] = useState(1);
 
   // Current Turn state
-  const [currentTurn, setCurrentTurn] = useState(0);
+  // const [currentTurn, setCurrentTurn] = useState(0);
 
   // Ref to generate ids for players
   const nextPlayerId = useRef(0);
 
   //helper function for sorting the player state
   const compareTurns = (a, b) => {
-    if(a.initiative < b.initiative){
+    if (a.initiative > b.initiative) {
       return -1; //a goes first
     }
-    else if(a.initiative > b.initiative){
+    else if (a.initiative < b.initiative) {
       return 1; //b goes first
     }
-    else{
+    else {
       //initiative counts are identical, sort alphabetically by name
-      if(a.name < b.name){
+      if (a.name > b.name) {
         return -1;
       }
-      else if(a.name > b.name){
+      else if (a.name < b.name) {
         return 1;
       }
-      else{
+      else {
         return 0; //this is only reached if both turns are identical.
       }
     }
   }
 
   const handleAddTurn = (name, initiative) => {
-    newId = nextPlayerId.current++;
+    let newId = nextPlayerId.current++;
+    let prevIndId = players[index].id;
     //if the player is being added to an empty list, the current turn is that player's turn
-    if(players.length === 0) {
-      currentTurn = newId;
+    if (players.length === 0) {
+      setCurrentTurn(newId);
     }
     setPlayers(prevPlayers => [
       ...prevPlayers,
@@ -81,59 +92,54 @@ function App() {
       }
     ].sort(compareTurns));
     //handles off-by-one errors when a new turn is added that appears before the current turn in the initiative order
-    if(players[i].id !== currentTurn){
-      i++;
+    if (players[index].id !== prevIndId) {
+      setIndex(index + 1);
     }
   }
 
   const handleRemoveTurn = (id) => {
     console.log(`Removed ${id}`); //included for testing
     //get index of removed turn
-    removedIndex = players.findIndex( (p) => p.id === id);
+    let removedIndex = players.findIndex((p) => p.id === id);
     //if the removed turn is the current one, adjust i accordingly
-    if (removedIndex === i){
-      i = i-1;
+    if (removedIndex === i) {
+      setIndex(i - 1);
     }
     setPlayers(prevPlayers => prevPlayers.filter(p => p.id !== id));
   }
 
   const handleNextTurn = () => {
-    if (i >= players.length) {
-      //if we've reached the end of the list of turns, reset the index variable and increase the round counter
-      i = 0;
-      setRound(round + 1);
-    }
-    currentTurn = players[i].id;
-    i++;
+    console.log(`previous index: ${players[index].id}`)
+    setIndex(index + 1);
+    console.log(`current index = ${index}; players length: ${players.length}`);
   }
-
 
   return (
     <div>
       <p>Test!</p>
       <div>
         { /* Turns go here */
-          testPlayers.map(player =>
+          players.map(player =>
             <Turn
               name={player.name}
               initiative={player.initiative}
               id={player.id}
               key={player.id.toString()}
               removeTurn={handleRemoveTurn}
-              isCurrentTurn={player.id === currentTurn}
+              isCurrentTurn={index === players.length ? (player.id === players[0].id) : (player.id === players[index].id)}
             />
           )}
         { /* AddTurnForm */}
       </div>
       <div>
-        <Sidebar 
-          currentTurn={currentTurn} 
-          round={round} 
-          nextTurn={handleAddTurn}
+        <Sidebar
+          currentTurnName={index === players.length ? (players[0].name) : (players[index].name)}
+          round={round}
+          nextTurn={handleNextTurn}
         />
       </div>
     </div>
   )
 }
 
-export default App
+export default App;
