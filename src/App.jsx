@@ -57,6 +57,12 @@ function App() {
 
   const handleRemoveTurn = (id) => {
     console.log(`Removed ${id}`); //included for testing
+    //get index of removed turn
+    removedIndex = players.findIndex( (p) => p.id === id);
+    //if the removed turn is the current one, adjust i accordingly
+    if (removedIndex === i){
+      i = i-1;
+    }
     setPlayers(prevPlayers => prevPlayers.filter(p => p.id !== id));
   }
 
