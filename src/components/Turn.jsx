@@ -1,5 +1,5 @@
 
-const Turn = ( { name, initiative, id, removeTurn }) => {
+const Turn = ( { name, initiative, id, isCurrentTurn, removeTurn }) => {
     return (
         <div>
             <p>{name}</p>
