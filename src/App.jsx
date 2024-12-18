@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 
 // Component imports
 import Turn from './components/Turn';
+import Sidebar from './components/Sidebar';
 
 // Array of Player objects for test purposes
 const testPlayers = [
@@ -38,7 +39,7 @@ function App() {
   const [round, setRound] = useState(1);
 
   // Current Turn state
-  const [currentTurn, setCurrentTurn] = useState(null);
+  const [currentTurn, setCurrentTurn] = useState(0);
 
   // Ref to generate ids for players
   const nextPlayerId = useRef(0);
@@ -97,13 +98,13 @@ function App() {
   }
 
   const handleNextTurn = () => {
-    i++;
     if (i >= players.length) {
       //if we've reached the end of the list of turns, reset the index variable and increase the round counter
       i = 0;
       setRound(round + 1);
     }
     currentTurn = players[i].id;
+    i++;
   }
 
 
@@ -125,7 +126,11 @@ function App() {
         { /* AddTurnForm */}
       </div>
       <div>
-        { /* Sidebar */}
+        <Sidebar 
+          currentTurn={currentTurn} 
+          round={round} 
+          nextTurn={handleAddTurn}
+        />
       </div>
     </div>
   )
