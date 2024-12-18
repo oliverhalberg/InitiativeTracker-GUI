@@ -43,16 +43,46 @@ function App() {
   // Ref to generate ids for players
   const nextPlayerId = useRef(0);
 
+  //helper function for sorting the player state
+  const compareTurns = (a, b) => {
+    if(a.initiative < b.initiative){
+      return -1; //a goes first
+    }
+    else if(a.initiative > b.initiative){
+      return 1; //b goes first
+    }
+    else{
+      //initiative counts are identical, sort alphabetically by name
+      if(a.name < b.name){
+        return -1;
+      }
+      else if(a.name > b.name){
+        return 1;
+      }
+      else{
+        return 0; //this is only reached if both turns are identical.
+      }
+    }
+  }
 
   const handleAddTurn = (name, initiative) => {
+    newId = nextPlayerId.current++;
+    //if the player is being added to an empty list, the current turn is that player's turn
+    if(players.length === 0) {
+      currentTurn = newId;
+    }
     setPlayers(prevPlayers => [
       ...prevPlayers,
       {
         name,
         initiative,
-        id: nextPlayerId.current++
+        id: newId
       }
-    ]);
+    ].sort(compareTurns));
+    //handles off-by-one errors when a new turn is added that appears before the current turn in the initiative order
+    if(players[i].id !== currentTurn){
+      i++;
+    }
   }
 
   const handleRemoveTurn = (id) => {
