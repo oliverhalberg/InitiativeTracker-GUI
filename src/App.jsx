@@ -43,7 +43,7 @@ function App() {
     console.log(`Removed ${id}`);
   }
 
-
+ 
   return (
     <div>
       <p>Test!</p>
@@ -56,6 +56,7 @@ function App() {
             id={player.id}
             key={player.id.toString()}
             removeTurn={handleRemoveTurn}
+            isCurrentTurn={player.initiative === currentTurn}
           />
         )}
         { /* AddTurnForm */}
