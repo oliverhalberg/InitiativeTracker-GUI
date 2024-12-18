@@ -66,3 +66,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Placeholder */
+.currentTurn {
+  border: solid green 2px;
+}
