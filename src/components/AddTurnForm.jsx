@@ -8,6 +8,7 @@ const AddTurnForm = ( { addTurn } ) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         addTurn(nameInput.current.value, initiativeInput.current.value);
+        console.log(`${nameInput.current.value}: ${initiativeInput.current.value}`); //for testing
         event.currentTarget.reset();
     }
 

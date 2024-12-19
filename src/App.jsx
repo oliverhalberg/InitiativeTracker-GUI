@@ -53,7 +53,7 @@ function App() {
   // const [currentTurn, setCurrentTurn] = useState(0);
 
   // Ref to generate ids for players
-  const nextPlayerId = useRef(0);
+  const nextPlayerId = useRef(4); //FOR TESTING ONLY: STARTS AT 4. FOR AN EMPTY STARTING PLAYER STATE, CHANGE BACK TO 0
 
   //helper function for sorting the player state
   const compareTurns = (a, b) => {
