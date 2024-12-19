@@ -94,6 +94,9 @@ function App() {
     ]);
     setTurns(prevTurns => prevTurns.sort(compareTurns));
     //handles off-by-one errors when a new turn is added that appears before the current turn in the initiative order
+    //NOTE: Is this an error? That is desired behavior before the first round. So maybe this correcting only occurs if
+    // the user has clicked "Next Turn" at least once? (boolean state isRunning updated to True once clicked, never set to False)
+    //Next step is to get the correction to actually work
     if (prevIndId !== null) {
       console.log(turns[index].id);
       if (turns[index].id !== prevIndId) {
@@ -108,12 +111,6 @@ function App() {
 
   const handleRemoveTurn = (id) => {
     console.log(`Removed ${id}`); //included for testing
-    //get index of removed turn
-    let removedIndex = turns.findIndex((p) => p.id === id);
-    //if the removed turn is the current one, adjust Index accordingly
-    // if (removedIndex === index && removedIndex !== 0) {
-    //   setIndex(index - 1);
-    // }
     setTurns(prevturns => prevturns.filter(p => p.id !== id));
   }
 
