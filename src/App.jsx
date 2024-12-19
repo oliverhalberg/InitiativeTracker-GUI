@@ -35,7 +35,7 @@ function App() {
   //useEffect hook to reset the Index state when it goes out of bounds
   useEffect(() => {
     
-    if (index === players.length) {
+    if (index === players.length && players.length > 0) {
       //if we've reached the end of the list of turns, reset the index variable and increase the round counter
       setIndex(0);
       setRound(round + 1);
@@ -102,8 +102,8 @@ function App() {
     //get index of removed turn
     let removedIndex = players.findIndex((p) => p.id === id);
     //if the removed turn is the current one, adjust i accordingly
-    if (removedIndex === i) {
-      setIndex(i - 1);
+    if (removedIndex === index && removedIndex !== 0) {
+      setIndex(index - 1);
     }
     setPlayers(prevPlayers => prevPlayers.filter(p => p.id !== id));
   }
@@ -118,22 +118,28 @@ function App() {
     <div>
       <p>Test!</p>
       <div>
-        { /* Turns go here */
-          players.map(player =>
+        {
+          // If there is a list of players, render it
+          players ? 
+          (players.map(player =>
             <Turn
               name={player.name}
               initiative={player.initiative}
               id={player.id}
               key={player.id.toString()}
               removeTurn={handleRemoveTurn}
-              isCurrentTurn={index === players.length ? (player.id === players[0].id) : (player.id === players[index].id)}
+              isCurrentTurn={
+                index === players.length ? (player.id === players[0].id) : (player.id === players[index].id)
+              }
             />
-          )}
+          ))
+          : null
+        }
         { /* AddTurnForm */}
       </div>
       <div>
         <Sidebar
-          currentTurnName={index === players.length ? (players[0].name) : (players[index].name)}
+          currentTurnName={players.length > 0 ? (index === players.length ? (players[0].name) : (players[index].name)) : "No turns detected"}
           round={round}
           nextTurn={handleNextTurn}
         />
