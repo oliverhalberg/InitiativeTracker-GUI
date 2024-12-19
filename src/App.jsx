@@ -35,7 +35,6 @@ function App() {
 
   //useEffect hook to reset the Index state when it goes out of bounds
   useEffect(() => {
-    
     if (index === turns.length && turns.length > 0) {
       //if we've reached the end of the list of turns, reset the index variable and increase the round counter
       setIndex(0);
@@ -45,6 +44,10 @@ function App() {
 
   // Turns state
   const [turns, setTurns] = useState(testTurns); //starts prefilled for testing
+
+  useEffect(() => {
+    setTurns(prevTurns => prevTurns.sort(compareTurns));
+  }, [turns]);
 
   // Round state
   const [round, setRound] = useState(1);
@@ -75,26 +78,31 @@ function App() {
   }
 
   const handleAddTurn = (name, initiative) => {
-    let prevIndId = turns[index].id;
-    console.log(`Previous ind id: ${prevIndId}`);
-    //if the Turn is being added to an empty list, it becomes the current Turn
-    if (turns.length === 0) {
-      setCurrentTurn(newId);
+    let prevIndId = null;
+    //if the Turn is being added to a non-empty array, save the id of the current turn for later comparison
+    if (turns.length !== 0) {
+      prevIndId = turns[index].id;
+      console.log(`Previous ind id: ${prevIndId}`);
     }
-    setturns(prevturns => [
-      ...prevturns,
+    setTurns(prevTurns => [
+      ...prevTurns,
       {
         name,
         initiative,
         id: nextPlayerId.current++
       }
-    ].sort(compareTurns));
+    ]);
+    setTurns(prevTurns => prevTurns.sort(compareTurns));
     //handles off-by-one errors when a new turn is added that appears before the current turn in the initiative order
-    if (turns[index].id !== prevIndId) {
-      setIndex(index + 2);
+    if (prevIndId !== null) {
+      console.log(turns[index].id);
+      if (turns[index].id !== prevIndId) {
+        setIndex(index + 1);
+        console.log("index updated");
+      }
     }
     //for testing
-    console.log(`Current ind id: ${turns[index].id}`);
+    //console.log(`Current ind id: ${turns[index].id}`);
     console.log(turns);
   }
 
@@ -103,10 +111,10 @@ function App() {
     //get index of removed turn
     let removedIndex = turns.findIndex((p) => p.id === id);
     //if the removed turn is the current one, adjust Index accordingly
-    if (removedIndex === index && removedIndex !== 0) {
-      setIndex(index - 1);
-    }
-    setturns(prevturns => prevturns.filter(p => p.id !== id));
+    // if (removedIndex === index && removedIndex !== 0) {
+    //   setIndex(index - 1);
+    // }
+    setTurns(prevturns => prevturns.filter(p => p.id !== id));
   }
 
   const handleNextTurn = () => {
@@ -121,22 +129,22 @@ function App() {
       <div>
         {
           // If there is a list of turns, render it
-          turns ? 
-          (turns.map(t =>
-            <Turn
-              name={t.name}
-              initiative={t.initiative}
-              id={t.id}
-              key={t.id.toString()}
-              removeTurn={handleRemoveTurn}
-              isCurrentTurn={
-                index === turns.length ? (t.id === turns[0].id) : (t.id === turns[index].id)
-              }
-            />
-          ))
-          : null
+          turns ?
+            (turns.map(t =>
+              <Turn
+                name={t.name}
+                initiative={t.initiative}
+                id={t.id}
+                key={t.id.toString()}
+                removeTurn={handleRemoveTurn}
+                isCurrentTurn={
+                  index === turns.length ? (t.id === turns[0].id) : (t.id === turns[index].id)
+                }
+              />
+            ))
+            : null
         }
-        <AddTurnForm addTurn={handleAddTurn}/>
+        <AddTurnForm addTurn={handleAddTurn} />
       </div>
       <div>
         <Sidebar
