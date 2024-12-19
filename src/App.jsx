@@ -97,6 +97,7 @@ function App() {
     //NOTE: Is this an error? That is desired behavior before the first round. So maybe this correcting only occurs if
     // the user has clicked "Next Turn" at least once? (boolean state isRunning updated to True once clicked, never set to False)
     //Next step is to get the correction to actually work
+    //Best fix is probably to implement a "previous turn" button and not to correct. Gives users more flexibility.
     if (prevIndId !== null) {
       console.log(turns[index].id);
       if (turns[index].id !== prevIndId) {
