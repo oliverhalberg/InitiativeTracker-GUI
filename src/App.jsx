@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from 'react'
 // Component imports
 import Turn from './components/Turn';
 import Sidebar from './components/Sidebar';
+import AddTurnForm from './components/AddTurnForm';
 
 // Array of Player objects for test purposes
 const testPlayers = [
@@ -135,7 +136,7 @@ function App() {
           ))
           : null
         }
-        { /* AddTurnForm */}
+        <AddTurnForm addTurn={handleAddTurn}/>
       </div>
       <div>
         <Sidebar
