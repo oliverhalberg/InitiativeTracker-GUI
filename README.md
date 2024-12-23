@@ -1,6 +1,8 @@
 # Initiative Tracker GUI
 
-More complete README coming soon!
+A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeons and Dragons. 
+
+## Status: In development
 
 
 ### Useful resources consulted
