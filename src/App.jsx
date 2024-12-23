@@ -99,27 +99,27 @@ function App() {
     // the user has clicked "Next Turn" at least once? (boolean state isRunning updated to True once clicked, never set to False)
     //Next step is to get the correction to actually work
     //Best fix is probably to implement a "previous turn" button and not to correct unless beta testers want it. Gives users more flexibility.
-    if (prevIndId !== null) {
-      console.log(turns[index].id);
-      if (turns[index].id !== prevIndId) {
-        setIndex(index + 1);
-        console.log("index updated");
-      }
-    }
+    // if (prevIndId !== null) {
+    //   console.log(turns[index].id);
+    //   if (turns[index].id !== prevIndId) {
+    //     setIndex(index + 1);
+    //     console.log("index updated");
+    //   }
+    // }
     //for testing
-    //console.log(`Current ind id: ${turns[index].id}`);
-    console.log(turns);
+    // console.log(`Current ind id: ${turns[index].id}`);
+    // console.log(turns);
   }
 
   const handleRemoveTurn = (id) => {
-    console.log(`Removed ${id}`); //included for testing
+    // console.log(`Removed ${id}`); //included for testing
     setTurns(prevturns => prevturns.filter(p => p.id !== id));
   }
 
   const handleNextTurn = () => {
-    console.log(`previous index: ${turns[index].id}`)
+    // console.log(`previous index: ${turns[index].id}`)
     setIndex(index + 1);
-    console.log(`current index = ${index}; turns length: ${turns.length}`);
+    // console.log(`current index = ${index}; turns length: ${turns.length}`);
   }
 
   const handlePreviousTurn = () => {
@@ -135,7 +135,6 @@ function App() {
 
   return (
     <div>
-      <p>Test!</p>
       <div>
         {
           // If there is a list of turns, render it
