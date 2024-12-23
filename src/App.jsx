@@ -45,6 +45,7 @@ function App() {
   // Turns state
   const [turns, setTurns] = useState(testTurns); //starts prefilled for testing
 
+  // Sorts the Turns state every time it's updated
   useEffect(() => {
     setTurns(prevTurns => prevTurns.sort(compareTurns));
   }, [turns]);
@@ -97,7 +98,7 @@ function App() {
     //NOTE: Is this an error? That is desired behavior before the first round. So maybe this correcting only occurs if
     // the user has clicked "Next Turn" at least once? (boolean state isRunning updated to True once clicked, never set to False)
     //Next step is to get the correction to actually work
-    //Best fix is probably to implement a "previous turn" button and not to correct. Gives users more flexibility.
+    //Best fix is probably to implement a "previous turn" button and not to correct unless beta testers want it. Gives users more flexibility.
     if (prevIndId !== null) {
       console.log(turns[index].id);
       if (turns[index].id !== prevIndId) {
@@ -119,6 +120,17 @@ function App() {
     console.log(`previous index: ${turns[index].id}`)
     setIndex(index + 1);
     console.log(`current index = ${index}; turns length: ${turns.length}`);
+  }
+
+  const handlePreviousTurn = () => {
+    if (index > 0){
+      //If index is greater than 0, decrements it
+      setIndex(index - 1);
+    }
+    else {
+      //If index is 0, wraps around without incrementing or decrementing the round state
+      setIndex(turns.length - 1);
+    }
   }
 
   return (
@@ -149,6 +161,7 @@ function App() {
           currentTurnName={turns.length > 0 ? (index === turns.length ? (turns[0].name) : (turns[index].name)) : "No turns detected"}
           round={round}
           nextTurn={handleNextTurn}
+          prevTurn={handlePreviousTurn}
         />
       </div>
     </div>
