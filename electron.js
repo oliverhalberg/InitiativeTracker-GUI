@@ -7,6 +7,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
+    resizable: false
   });
 
   win.loadURL('http://localhost:5173');

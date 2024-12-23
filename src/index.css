@@ -60,11 +60,23 @@ button:focus-visible {
 }
 
 #turnsContainer {
-  flex: 60%;
+  flex: 8%;
 }
 
 #sidebarContainer {
-  flex: 40%;
+  flex: 20%;
+  position: fixed;
+  right: 2em;
+  top: 180px;
+}
+
+.turn {
+  display: flex;
+  padding: 1em;
+}
+
+.turn p {
+  padding: 0.5em;
 }
 
 @media (prefers-color-scheme: light) {
