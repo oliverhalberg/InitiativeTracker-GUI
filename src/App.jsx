@@ -120,12 +120,14 @@ function App() {
     // console.log(`previous index: ${turns[index].id}`)
     setIndex(index + 1);
     // console.log(`current index = ${index}; turns length: ${turns.length}`);
+    document.getElementById(turns[index]).scrollIntoView();
   }
 
   const handlePreviousTurn = () => {
     if (index > 0){
       //If index is greater than 0, decrements it
       setIndex(index - 1);
+      document.getElementById(turns[index]).scrollIntoView();
     }
     else {
       //If index is 0, wraps around without incrementing or decrementing the round state
@@ -134,8 +136,8 @@ function App() {
   }
 
   return (
-    <div>
-      <div>
+    <div id='appContainer'>
+      <div id='turnsContainer'>
         {
           // If there is a list of turns, render it
           turns ?
@@ -153,15 +155,15 @@ function App() {
             ))
             : null
         }
-        <AddTurnForm addTurn={handleAddTurn} />
       </div>
-      <div>
+      <div id='sidebarContainer'>
         <Sidebar
           currentTurnName={turns.length > 0 ? (index === turns.length ? (turns[0].name) : (turns[index].name)) : "No turns detected"}
           round={round}
           nextTurn={handleNextTurn}
           prevTurn={handlePreviousTurn}
         />
+        <AddTurnForm addTurn={handleAddTurn} />
       </div>
     </div>
   )
