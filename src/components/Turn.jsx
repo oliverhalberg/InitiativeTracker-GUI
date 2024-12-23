@@ -1,7 +1,7 @@
 
-const Turn = ( { name, initiative, id, isCurrentTurn, removeTurn }) => {
+const Turn = ( { name, initiative, id, isCurrentTurn, removeTurn, refProp }) => {
     return (
-        <div className={isCurrentTurn ? "currentTurn" : null}>
+        <div id={`turn${id}`} className={isCurrentTurn ? "currentTurn" : null} ref={refProp}>
             <p>{name}</p>
             <p>{initiative}</p>
             <button onClick={() => removeTurn(id)}>X</button>

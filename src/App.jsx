@@ -56,6 +56,9 @@ function App() {
   // Ref to generate ids for turns
   const nextPlayerId = useRef(4); //FOR TESTING ONLY: STARTS AT 4. FOR AN EMPTY STARTING PLAYER STATE, CHANGE BACK TO 0
 
+  // For tracking current turn
+  const currentTurnRef = useRef();
+
   //helper function for sorting the Turns state
   const compareTurns = (a, b) => {
     if (a.initiative > b.initiative) {
@@ -120,18 +123,27 @@ function App() {
     // console.log(`previous index: ${turns[index].id}`)
     setIndex(index + 1);
     // console.log(`current index = ${index}; turns length: ${turns.length}`);
-    document.getElementById(turns[index]).scrollIntoView();
+    currentTurnRef.current.scrollIntoView({behavior: 'smooth', block: 'start'});
   }
 
   const handlePreviousTurn = () => {
     if (index > 0){
       //If index is greater than 0, decrements it
       setIndex(index - 1);
-      document.getElementById(turns[index]).scrollIntoView();
     }
     else {
       //If index is 0, wraps around without incrementing or decrementing the round state
       setIndex(turns.length - 1);
+    }
+  }
+
+  //helper function to determine whether a Turn component is the current turn
+  const isCurrentTurnComponent = (id) => {
+    if(index === turns.length){
+      return id === turns[0].id;
+    }
+    else{
+      return id === turns[index].id;
     }
   }
 
@@ -149,8 +161,10 @@ function App() {
                 key={t.id.toString()}
                 removeTurn={handleRemoveTurn}
                 isCurrentTurn={
-                  index === turns.length ? (t.id === turns[0].id) : (t.id === turns[index].id)
+                  isCurrentTurnComponent(t.id)
                 }
+                refProp={
+                  isCurrentTurnComponent(t.id) ? currentTurnRef : null}
               />
             ))
             : null
