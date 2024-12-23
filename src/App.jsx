@@ -135,6 +135,8 @@ function App() {
       //If index is 0, wraps around without incrementing or decrementing the round state
       setIndex(turns.length - 1);
     }
+    currentTurnRef.current.scrollIntoView({behavior: 'smooth', block: 'start'});
+
   }
 
   //helper function to determine whether a Turn component is the current turn
