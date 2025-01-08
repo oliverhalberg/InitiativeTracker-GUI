@@ -33,12 +33,19 @@ function App() {
   // Index state for iterating through turns state
   const [index, setIndex] = useState(0);
 
-  //useEffect hook to reset the Index state when it goes out of bounds
   useEffect(() => {
+    // Reset Index state if it goes out of bounds, updating Round state
     if (index === turns.length && turns.length > 0) {
       //if we've reached the end of the list of turns, reset the index variable and increase the round counter
       setIndex(0);
       setRound(round + 1);
+    }
+    // Scroll to make sure that current turn is within view
+    if (index === 0){
+      scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    }
+    else{
+      currentTurnRef.current.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
     }
   });
 
@@ -123,7 +130,6 @@ function App() {
     // console.log(`previous index: ${turns[index].id}`)
     setIndex(index + 1);
     // console.log(`current index = ${index}; turns length: ${turns.length}`);
-    currentTurnRef.current.scrollIntoView({behavior: 'smooth', block: 'start'});
   }
 
   const handlePreviousTurn = () => {
@@ -135,8 +141,6 @@ function App() {
       //If index is 0, wraps around without incrementing or decrementing the round state
       setIndex(turns.length - 1);
     }
-    currentTurnRef.current.scrollIntoView({behavior: 'smooth', block: 'start'});
-
   }
 
   //helper function to determine whether a Turn component is the current turn
