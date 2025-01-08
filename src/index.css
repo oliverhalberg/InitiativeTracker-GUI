@@ -64,7 +64,7 @@ button:focus-visible {
   flex: 8%;
   margin-top: 2em;
   margin-bottom: 2em;
-  margin-left: 1em;
+  margin-left: 2em;
   align-items: center;
 }
 
@@ -73,6 +73,19 @@ button:focus-visible {
   position: fixed;
   right: 2em;
   top: 180px;
+  text-align: center;
+}
+
+#sidebarContainer button {
+  margin: 0.3em;
+}
+
+#addTurnForm {
+  margin: 0.5em 0em;
+}
+
+#addTurnForm input {
+  margin: 0.3em;
 }
 
 .turn {

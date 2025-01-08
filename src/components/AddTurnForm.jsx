@@ -13,7 +13,7 @@ const AddTurnForm = ( { addTurn } ) => {
     }
 
     return (
-        <form onSubmit={(event) => handleSubmit(event)}>
+        <form onSubmit={(event) => handleSubmit(event)} id='addTurnForm'>
             <input
                 type='text'
                 ref={nameInput}
