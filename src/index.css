@@ -45,6 +45,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  text-align: center;
 }
 button:hover {
   border-color: #646cff;
@@ -61,6 +62,10 @@ button:focus-visible {
 
 #turnsContainer {
   flex: 8%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 1em;
+  align-items: center;
 }
 
 #sidebarContainer {
@@ -73,10 +78,17 @@ button:focus-visible {
 .turn {
   display: flex;
   padding: 1em;
+  align-items: center;
 }
 
 .turn p {
   padding: 0.5em;
+}
+
+.removeTurnButton {
+  border-radius: 25%;
+  font-size: 14px;
+  padding: 10px;
 }
 
 @media (prefers-color-scheme: light) {
