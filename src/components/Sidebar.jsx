@@ -5,8 +5,10 @@ const Sidebar = ({ currentTurnName, round, nextTurn, prevTurn }) => {
         <div>
             <p>Current turn: {currentTurnName}</p>
             <p>Round: {round}</p>
-            <button onClick={() => prevTurn()}>{prevButtonText}</button>
-            <button onClick={() => nextTurn()}>{nextButtonText}</button>
+            <div id='turnButtons'>
+                <button onClick={() => prevTurn()}>{prevButtonText}</button>
+                <button onClick={() => nextTurn()}>{nextButtonText}</button>
+            </div>
         </div>
     );
 }
