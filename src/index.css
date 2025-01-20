@@ -11,6 +11,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Global variables */
+  --turn-background: rgba(0, 128, 0, 0.806);
 }
 
 a {
@@ -96,10 +99,20 @@ button:focus-visible {
   display: flex;
   padding: 1em;
   align-items: center;
+  /* Probably a lighter color */
+  background-color: var(--turn-background);
+  margin: 0.5em;
+  /* Make some sort of shape anyway */
+  border-radius: 25%;
+  /* Make a fixed with maybe? and adjust the text and button to align left and right respectively? */
 }
 
 .turn p {
   padding: 0.5em;
+}
+
+.currentTurn {
+  border: solid green 2px;
 }
 
 .removeTurnButton {
@@ -119,9 +132,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-
-/* Placeholder */
-.currentTurn {
-  border: solid green 2px;
 }
