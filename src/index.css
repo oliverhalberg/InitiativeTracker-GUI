@@ -81,7 +81,7 @@ button:focus-visible {
   flex: 20%;
   position: fixed;
   right: 2em;
-  top: 180px;
+  top: 150px;
   text-align: center;
 }
 
@@ -115,6 +115,24 @@ button:focus-visible {
   background-color: var(--button-background-color);
 }
 
+#addTurnForm input[type=submit] {
+  background-color: var(--button-background-color);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: .8em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-background-color);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  text-align: center;
+  margin-top: 5px;
+}
+
+#addTurnForm input[type=submit]:hover {
+  border-color: var(--button-highlight-color);
+}
 
 
 .turn {

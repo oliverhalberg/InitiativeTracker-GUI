@@ -19,18 +19,15 @@ const AddTurnForm = ({ addTurn }) => {
                     type='text'
                     ref={nameInput}
                     placeholder='Enter name'
-                    id='addTurnFormNameInput'
                 />
                 <input
                     type='number'
                     ref={initiativeInput}
                     placeholder='Initiative'
-                    id='addTurnFormInitiativeInput'
                 />
                 <input
                     type='submit'
                     value="Add Turn"
-                    id='addTurnFormSubmit'
                 />
             </form>
         </div>
