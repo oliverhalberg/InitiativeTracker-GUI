@@ -83,6 +83,10 @@ button:focus-visible {
   margin: 0.3em;
 }
 
+#sidebar p {
+  font-size: 120%;
+}
+
 #turnButtons button {
   width: 140px;
 }
@@ -97,22 +101,34 @@ button:focus-visible {
 
 .turn {
   display: flex;
+  justify-content: space-between;
   padding: 1em;
   align-items: center;
-  /* Probably a lighter color */
   background-color: var(--turn-background);
-  margin: 0.5em;
-  /* Make some sort of shape anyway */
-  border-radius: 25%;
-  /* Make a fixed with maybe? and adjust the text and button to align left and right respectively? */
+  margin: 1em;
+  border-radius: 10px;
+  height: 30px;
+  min-width: 150px;
+  width: fit-content;
 }
 
 .turn p {
   padding: 0.5em;
 }
 
+.turnInitiative {
+  margin-left: auto;
+}
+
+.turnRHS {
+  align-items: center;
+  margin-left: 0.3em;
+}
+
 .currentTurn {
   border: solid green 2px;
+  height: 35px;
+  min-width: 160px;
 }
 
 .removeTurnButton {
