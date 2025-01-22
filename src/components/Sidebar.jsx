@@ -2,7 +2,7 @@ const Sidebar = ({ currentTurnName, round, nextTurn, prevTurn }) => {
     const prevButtonText = '<< Previous';
     const nextButtonText = 'Next >>'
     return (
-        <div>
+        <div id='sidebar'>
             <p>Current turn: {currentTurnName}</p>
             <p>Round: {round}</p>
             <div id='turnButtons'>
