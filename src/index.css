@@ -18,6 +18,8 @@
   --text-color: rgba(255, 255, 255, 0.87);
   --current-turn-border: rgb(227, 227, 227);
   --button-highlight-color: rgb(227, 227, 227);
+  --button-background-color: #1a1a1a;
+  --input-border: rgba(255, 255, 255, 0.717);
 }
 
 a {
@@ -49,7 +51,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--button-background-color);
   cursor: pointer;
   transition: border-color 0.25s;
   text-align: center;
@@ -99,9 +101,21 @@ button:focus-visible {
   margin: 0.5em 0em;
 }
 
-#addTurnForm input {
+#addTurnForm input[type=text], input[type=number] {
   margin: 0.3em;
+  width: 100%;
+  background-color: var(--button-background-color);
+  border: solid var(--input-border);
+  line-height: 1.5;
 }
+
+#addTurnForm input[type=text]:focus, input[type=number]:focus {
+  border-color: var(--button-highlight-color);
+  outline: none;
+  background-color: var(--button-background-color);
+}
+
+
 
 .turn {
   display: flex;
@@ -141,7 +155,7 @@ button:focus-visible {
   padding: 10px;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -152,4 +166,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
