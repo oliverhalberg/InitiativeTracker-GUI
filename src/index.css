@@ -16,8 +16,8 @@
   --turn-background: rgba(0, 128, 0, 0.806);
   --global-background: #242424;
   --text-color: rgba(255, 255, 255, 0.87);
-  --current-turn-border: white;
-  --button-highlight-color: #646cff;
+  --current-turn-border: rgb(227, 227, 227);
+  --button-highlight-color: rgb(227, 227, 227);
 }
 
 a {
