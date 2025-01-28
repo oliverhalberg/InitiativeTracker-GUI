@@ -97,7 +97,7 @@ function App() {
   }
 
   const handleAddTurn = (name, initiative) => {
-    let prevIndId = null;
+    let prevIndId = null; //used only for tracking during testing at this point, but I'm leaving it in
     //if the Turn is being added to a non-empty array, save the id of the current turn for later comparison
     if (turns.length !== 0) {
       prevIndId = turns[index].id;
