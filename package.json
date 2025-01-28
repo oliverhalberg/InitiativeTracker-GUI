@@ -2,6 +2,8 @@
   "name": "initiative-tracker-gui",
   "private": true,
   "version": "1.0.0",
+  "description": "A tool for tracking initiative in TTRPG systems such as Dungeons and Dragons 5e.",
+  "author": "Oliver Halberg",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,11 +13,11 @@
     "electron": "electron electron.js"
   },
   "dependencies": {
-    "electron": "^33.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "electron": "^33.2.1",
     "@eslint/js": "^9.15.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
