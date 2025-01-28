@@ -56,7 +56,7 @@ function App() {
   // Sorts the Turns state every time it's updated
   useEffect(() => {
     setTurns(prevTurns => prevTurns.sort(compareTurns));
-    console.log(turns);
+    // console.log(turns);
   }, [turns]);
 
   // Round state
@@ -101,7 +101,7 @@ function App() {
     //if the Turn is being added to a non-empty array, save the id of the current turn for later comparison
     if (turns.length !== 0) {
       prevIndId = turns[index].id;
-      console.log(`Previous ind id: ${prevIndId}`);
+      // console.log(`Previous ind id: ${prevIndId}`);
     }
     setTurns(prevTurns => [
       ...prevTurns,
@@ -115,8 +115,7 @@ function App() {
     //handles off-by-one errors when a new turn is added that appears before the current turn in the initiative order
     //NOTE: Is this an error? That is desired behavior before the first round. So maybe this correcting only occurs if
     // the user has clicked "Next Turn" at least once? (boolean state isRunning updated to True once clicked, never set to False)
-    //Next step is to get the correction to actually work
-    //Best fix is probably to implement a "previous turn" button and not to correct unless beta testers want it. Gives users more flexibility.
+    // CURRENT PLAN: This isn't a bug, but I can try to fix it if the beta testers view it as such.
     // if (prevIndId !== null) {
     //   console.log(turns[index].id);
     //   if (turns[index].id !== prevIndId) {
