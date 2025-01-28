@@ -13,6 +13,28 @@
     "preview": "vite preview",
     "electron": "electron electron.js"
   },
+  "build": {
+    "appId": "com.electron.initiativetracker",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": "NSIS"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": [
+        "snap",
+        "AppImage",
+        "deb"
+      ]
+    }
+  },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
