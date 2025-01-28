@@ -30,8 +30,7 @@
     "linux": {
       "target": [
         "snap",
-        "AppImage",
-        "deb"
+        "AppImage"
       ]
     }
   },
