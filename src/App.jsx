@@ -50,36 +50,44 @@ function App() {
   });
 
   // Turns state
-  const [turns, setTurns] = useState(testTurns); //starts prefilled for testing
+  // const [turns, setTurns] = useState(testTurns); //starts prefilled for testing
+  const [turns, setTurns] = useState([]);
 
   // Sorts the Turns state every time it's updated
   useEffect(() => {
     setTurns(prevTurns => prevTurns.sort(compareTurns));
+    console.log(turns);
   }, [turns]);
 
   // Round state
   const [round, setRound] = useState(1);
 
   // Ref to generate ids for turns
-  const nextPlayerId = useRef(4); //FOR TESTING ONLY: STARTS AT 4. FOR AN EMPTY STARTING PLAYER STATE, CHANGE BACK TO 0
+  const nextPlayerId = useRef(0); //FOR TESTING ONLY: STARTS AT 4. FOR AN EMPTY STARTING PLAYER STATE, CHANGE BACK TO 0
 
   // For tracking current turn
   const currentTurnRef = useRef();
 
   //helper function for sorting the Turns state
   const compareTurns = (a, b) => {
-    if (a.initiative > b.initiative) {
+    //data cleaning:
+    const aInit = parseInt(a.initiative);
+    const bInit = parseInt(b.initiative);
+    const aName = a.name.toLowerCase();
+    const bName = b.name.toLowerCase();
+
+    if (aInit > bInit) {
       return -1; //a goes first
     }
-    else if (a.initiative < b.initiative) {
+    else if (aInit < bInit) {
       return 1; //b goes first
     }
     else {
       //initiative counts are identical, sort alphabetically by name
-      if (a.name > b.name) {
+      if (aName < bName) {
         return -1;
       }
-      else if (a.name < b.name) {
+      else if (aName > bName) {
         return 1;
       }
       else {
