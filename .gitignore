@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 build
+devnotes.txt
 
 # Editor directories and files
 .vscode/*
