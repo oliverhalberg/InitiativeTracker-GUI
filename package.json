@@ -21,7 +21,6 @@
     "files": [
       "dist/**/*",
       "dist/assets/**/*",
-      "build/**/*",
       "node_modules/**/*",
       "package.json",
       "public/**/*",
