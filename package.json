@@ -5,7 +5,7 @@
   "description": "A tool for tracking initiative in TTRPG systems such as Dungeons and Dragons 5e.",
   "author": "Oliver Halberg",
   "type": "module",
-  "main": "electron.js",
+  "main": "src/main.jsx",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -19,7 +19,11 @@
       "output": "build"
     },
     "files": [
-      "**/*"
+      "dist/**/*",
+      "build/**/*",
+      "node_modules/**/*",
+      "package.json",
+      "public/**/*"
     ],
     "win": {
       "target": "NSIS"
@@ -39,11 +43,12 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "electron": "^33.2.1",
+    "electron-is-dev": "^3.0.1",
     "@eslint/js": "^9.15.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
     "electron-builder": "^25.1.8",
     "eslint": "^9.15.0",
     "eslint-plugin-react": "^7.37.2",

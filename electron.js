@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron';
+import isDev from 'electron-is-dev';
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -10,7 +11,12 @@ function createWindow() {
     resizable: false
   });
 
-  win.loadURL('http://localhost:5173');
+  if (isDev){
+    win.loadURL('http://localhost:5173');
+  }
+  else {
+    win.loadFile("dist/index.html");
+  }
 
 }
 
