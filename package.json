@@ -5,7 +5,7 @@
   "description": "A tool for tracking initiative in TTRPG systems such as Dungeons and Dragons 5e.",
   "author": "Oliver Halberg",
   "type": "module",
-  "main": "electron.js",
+  "main": "src/main.jsx",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

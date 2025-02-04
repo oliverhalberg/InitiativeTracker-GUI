@@ -8,7 +8,9 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
-    resizable: false
+    resizable: true,
+    minWidth: 800,
+    minHeight: 600
   });
 
   if (isDev){
