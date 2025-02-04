@@ -41,11 +41,14 @@ function App() {
       setRound(round + 1);
     }
     // Scroll to make sure that current turn is within view
-    if (index === 0){
-      scrollTo({top: 0, left: 0, behavior: 'smooth'});
-    }
-    else{
-      currentTurnRef.current.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+    if (turns.length > 0) {
+      //only scroll if turns state has at least one turn in it
+      if (index === 0) {
+        scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      }
+      else {
+        currentTurnRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+      }
     }
   });
 
@@ -140,7 +143,7 @@ function App() {
   }
 
   const handlePreviousTurn = () => {
-    if (index > 0){
+    if (index > 0) {
       //If index is greater than 0, decrements it
       setIndex(index - 1);
     }
@@ -152,10 +155,10 @@ function App() {
 
   //helper function to determine whether a Turn component is the current turn
   const isCurrentTurnComponent = (id) => {
-    if(index === turns.length){
+    if (index === turns.length) {
       return id === turns[0].id;
     }
-    else{
+    else {
       return id === turns[index].id;
     }
   }
