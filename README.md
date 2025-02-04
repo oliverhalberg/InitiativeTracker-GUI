@@ -3,6 +3,7 @@
 A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeons and Dragons. 
 
 ## Status: In beta testing - v1.0.2 is released.
+- Bug fixes and new features are being added, working towards v1.1.0
 
 
 ### Useful resources consulted
