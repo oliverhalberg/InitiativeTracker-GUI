@@ -148,8 +148,11 @@ function App() {
       setIndex(index - 1);
     }
     else {
-      //If index is 0, wraps around without incrementing or decrementing the round state
+      //If index is 0, wraps around, decrementing the round (to a minimum of 1)
       setIndex(turns.length - 1);
+      if (round >= 2){
+        setRound(round - 1);
+      }
     }
   }
 
