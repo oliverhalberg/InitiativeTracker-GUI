@@ -3,12 +3,14 @@ const Sidebar = ({ currentTurnName, round, nextTurn, prevTurn }) => {
     const nextButtonText = 'Next >>'
     return (
         <div id='sidebar'>
-            <p>Current turn: {currentTurnName}</p>
-            <p>Round: {round}</p>
-            <div id='turnButtons'>
-                <button onClick={() => prevTurn()}>{prevButtonText}</button>
-                <button onClick={() => nextTurn()}>{nextButtonText}</button>
+            <div id='sidebarText'>
+                <p>Current turn: {currentTurnName}</p>
+                <p>Round: {round}</p>
             </div>
+            <div id='turnButtons'>
+            </div>
+            <button onClick={() => prevTurn()}>{prevButtonText}</button>
+            <button onClick={() => nextTurn()}>{nextButtonText}</button>
         </div>
     );
 }

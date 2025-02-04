@@ -81,8 +81,9 @@ button:focus-visible {
   flex: 20%;
   position: fixed;
   right: 2em;
-  top: 150px;
+  top: 25%;
   text-align: center;
+  max-width: 40%;
 }
 
 #sidebarContainer button {
@@ -143,9 +144,11 @@ button:focus-visible {
   background-color: var(--turn-background);
   margin: 1em;
   border-radius: 10px;
-  height: 30px;
+  min-height: 30px;
+  height: fit-content;
   min-width: 150px;
   width: fit-content;
+  max-width: 300px;
 }
 
 .turn p {
@@ -163,7 +166,8 @@ button:focus-visible {
 
 .currentTurn {
   border: solid var(--current-turn-border) 2px;
-  height: 35px;
+  min-height: 35px;
+  height: fit-content;
   min-width: 160px;
 }
 
