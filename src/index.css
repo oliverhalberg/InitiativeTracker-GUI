@@ -139,7 +139,7 @@ button:focus-visible {
 .turn {
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  padding: 0.5em 1em;
   align-items: center;
   background-color: var(--turn-background);
   margin: 1em;
@@ -152,7 +152,7 @@ button:focus-visible {
 }
 
 .turn p {
-  padding: 0.5em;
+  padding: 0em 0.5em;
 }
 
 .turnInitiative {
