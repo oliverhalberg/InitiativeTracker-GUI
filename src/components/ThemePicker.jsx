@@ -3,12 +3,12 @@ import { useContext } from "react";
 
 const ThemePicker = () => {
 
-    const { theme, setTheme } = useContext(ThemeContext);
+    const { theme, actions } = useContext(ThemeContext);
 
     return (
         <div>
             <div id="themePickerOptions" className="themeOptionsContent">
-                <p onClick={setTheme("default")}>Default</p>
+                <p onClick={actions.updateTheme("default")}>Default</p>
                 <p>filler</p>
                 <p>More filler</p>
                 <p>More filler</p>

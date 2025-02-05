@@ -198,7 +198,8 @@ button:focus-visible {
 }
 
 .themeOptionsContent p:hover {
-  border-color: var(--button-highlight-color);
+  /* Placeholder */
+  border: solid var(--button-highlight-color);
 }
 
 .show {

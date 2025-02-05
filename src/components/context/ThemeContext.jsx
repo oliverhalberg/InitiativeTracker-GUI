@@ -22,7 +22,9 @@ export const ThemeProvider = (props) => {
         <ThemeContext.Provider value={
             {
                 theme,
-                setTheme
+                actions: {
+                    updateTheme: setTheme
+                }
             }
         }>
             {props.children}
