@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react'
 import Turn from './components/Turn';
 import Sidebar from './components/Sidebar';
 import AddTurnForm from './components/AddTurnForm';
+import ThemePicker from './components/ThemePicker';
 
 // Array of Turn objects for test purposes
 const testTurns = [
@@ -189,6 +190,7 @@ function App() {
             : null
         }
       </div>
+      <ThemePicker/>
       <div id='sidebarContainer'>
         <Sidebar
           currentTurnName={turns.length > 0 ? (index === turns.length ? (turns[0].name) : (turns[index].name)) : "No turns detected"}

@@ -177,6 +177,14 @@ button:focus-visible {
   padding: 10px;
 }
 
+.themeOptionsContent {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 /* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
