@@ -151,7 +151,7 @@ function App() {
     else {
       //If index is 0, wraps around, decrementing the round (to a minimum of 1)
       setIndex(turns.length - 1);
-      if (round >= 2){
+      if (round >= 2) {
         setRound(round - 1);
       }
     }
@@ -168,38 +168,40 @@ function App() {
   }
 
   return (
-    <div id='appContainer'>
-      <div id='turnsContainer'>
-        {
-          // If there is a list of turns, render it
-          turns ?
-            (turns.map(t =>
-              <Turn
-                name={t.name}
-                initiative={t.initiative}
-                id={t.id}
-                key={t.id.toString()}
-                removeTurn={handleRemoveTurn}
-                isCurrentTurn={
-                  isCurrentTurnComponent(t.id)
-                }
-                refProp={
-                  isCurrentTurnComponent(t.id) ? currentTurnRef : null}
-              />
-            ))
-            : null
-        }
+    <div id="appContainer">
+      <div id='appSubContainer'>
+        <div id='turnsContainer'>
+          {
+            // If there is a list of turns, render it
+            turns ?
+              (turns.map(t =>
+                <Turn
+                  name={t.name}
+                  initiative={t.initiative}
+                  id={t.id}
+                  key={t.id.toString()}
+                  removeTurn={handleRemoveTurn}
+                  isCurrentTurn={
+                    isCurrentTurnComponent(t.id)
+                  }
+                  refProp={
+                    isCurrentTurnComponent(t.id) ? currentTurnRef : null}
+                />
+              ))
+              : null
+          }
+        </div>
+        <div id='sidebarContainer'>
+          <Sidebar
+            currentTurnName={turns.length > 0 ? (index === turns.length ? (turns[0].name) : (turns[index].name)) : "No turns detected"}
+            round={round}
+            nextTurn={handleNextTurn}
+            prevTurn={handlePreviousTurn}
+          />
+          <AddTurnForm addTurn={handleAddTurn} />
+        </div>
       </div>
-      <ThemePicker/>
-      <div id='sidebarContainer'>
-        <Sidebar
-          currentTurnName={turns.length > 0 ? (index === turns.length ? (turns[0].name) : (turns[index].name)) : "No turns detected"}
-          round={round}
-          nextTurn={handleNextTurn}
-          prevTurn={handlePreviousTurn}
-        />
-        <AddTurnForm addTurn={handleAddTurn} />
-      </div>
+      <ThemePicker />
     </div>
   )
 }

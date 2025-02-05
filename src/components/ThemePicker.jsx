@@ -1,16 +1,24 @@
 import ThemeContext from "./context/ThemeContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 const ThemePicker = () => {
 
-    const {theme, setTheme} = useContext(ThemeContext);
+    const { theme, setTheme } = useContext(ThemeContext);
 
     return (
         <div>
             <div id="themePickerOptions" className="themeOptionsContent">
                 <p onClick={setTheme("default")}>Default</p>
+                <p>filler</p>
+                <p>More filler</p>
+                <p>More filler</p>
+                <p>Yet more filler text</p>
             </div>
-            <button onClick={()=> {document.getElementById("themePickerOptions").classList.toggle("show")}}>Change Theme</button>
+            <button id="themePickerButton"
+                onClick={() => { document.getElementById("themePickerOptions").classList.toggle("show") }}
+            >
+                Change Theme
+            </button>
         </div>
     );
 }

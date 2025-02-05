@@ -65,7 +65,7 @@ button:focus-visible {
 } */
 
 /* General layout */
-#appContainer {
+#appSubContainer {
   display: flex;
 }
 
@@ -177,8 +177,28 @@ button:focus-visible {
   padding: 10px;
 }
 
+#themePickerButton {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  font-size: .8em;
+  width: 110px;
+}
+
 .themeOptionsContent {
   display: none;
+  position: fixed;
+  right: 5%;
+  bottom: 12%;
+  overflow-y: scroll;
+  height: 20%;
+  width: 110px;
+  font-size: .8em;
+  text-align: center;
+}
+
+.themeOptionsContent p:hover {
+  border-color: var(--button-highlight-color);
 }
 
 .show {
