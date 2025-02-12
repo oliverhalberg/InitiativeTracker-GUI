@@ -72,6 +72,15 @@ function App() {
   // For tracking current turn
   const currentTurnRef = useRef();
 
+
+  const [theme, setTheme] = useState();
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
+
+
   //helper function for sorting the Turns state
   const compareTurns = (a, b) => {
     //data cleaning:
@@ -201,7 +210,7 @@ function App() {
           <AddTurnForm addTurn={handleAddTurn} />
         </div>
       </div>
-      <ThemePicker />
+      <ThemePicker updateTheme={setTheme}/>
     </div>
   )
 }

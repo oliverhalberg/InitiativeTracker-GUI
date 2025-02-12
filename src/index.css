@@ -1,25 +1,33 @@
+body {
+  --global-background: #242424;
+  --turn-background: rgba(0, 128, 0, 0.806);
+  --text-color: rgba(255, 255, 255, 0.87);
+  --current-turn-border: rgb(227, 227, 227);
+  --button-highlight-color: rgb(227, 227, 227);
+  --button-background-color: #1a1a1a;
+  --input-border: rgba(255, 255, 255, 0.717);
+}
+
+body.test {
+  --global-background: blue;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--global-background);
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: var(--text-color);
-  background-color: var(--global-background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Global variables */
-  --turn-background: rgba(0, 128, 0, 0.806);
-  --global-background: #242424;
-  --text-color: rgba(255, 255, 255, 0.87);
-  --current-turn-border: rgb(227, 227, 227);
-  --button-highlight-color: rgb(227, 227, 227);
-  --button-background-color: #1a1a1a;
-  --input-border: rgba(255, 255, 255, 0.717);
+  -moz-osx-font-smoothing: grayscale; 
 }
 
 a {
