@@ -30,7 +30,11 @@ const testTurns = [
   }
 ];
 
-function App() {
+function App({ message }) {
+
+  //test code for passing information from main to renderer process
+  console.log(message);
+
   // Index state for iterating through turns state
   const [index, setIndex] = useState(0);
 

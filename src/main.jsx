@@ -4,8 +4,12 @@ import './index.css'
 import App from './App.jsx'
 import { ThemeProvider } from './components/context/ThemeContext.jsx'
 
+let msg = 'b';
+
+//window.test.onTestMessage((value) => msg = value);
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <App />
+      <App message={window.test.message}/>
   </StrictMode>,
 )

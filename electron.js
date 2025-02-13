@@ -1,5 +1,7 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import isDev from 'electron-is-dev';
+import path from 'node:path';
+const __dirname = import.meta.dirname;
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -7,11 +9,15 @@ function createWindow() {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
+      preload: path.join(__dirname, 'preload.cjs')
     },
     resizable: true,
     minWidth: 800,
     minHeight: 600
   });
+
+  win.webContents.send('test', "hi");
+
 
   if (isDev){
     win.loadURL('http://localhost:5173');
@@ -22,4 +28,6 @@ function createWindow() {
 
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+  createWindow();
+});
