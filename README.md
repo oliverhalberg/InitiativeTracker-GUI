@@ -8,5 +8,7 @@ A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeon
 
 ### Useful resources consulted
 - Electron.js's [tutorial](https://www.electronjs.org/docs/latest/tutorial/tutorial-prerequisites)
+- Electron.js's [documentation](https://www.electronjs.org/docs/latest/tutorial/ipc) on inter-process communication
 - Clouwood Studio's [guide](https://clouwood.com/the-ultimate-guide-to-electron-with-react/) to using Electron with React
 - W3Schools's [tutorial](https://www.w3schools.com/howto/howto_js_dropdown.asp) on creating dropdown menus
+- This [guide](https://www.geeksforgeeks.org/persisting-data-in-electronjs/) to persisting data in Electron.js from GeeksforGeeks
