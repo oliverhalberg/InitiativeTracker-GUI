@@ -4,6 +4,7 @@ A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeon
 
 ## Status: In beta testing - v1.0.2 is released.
 - Bug fixes and new features are being added, working towards v1.1.0
+- Note: There is plenty of old and/or commented-out code in this project; I have not gone through and cleaned it up yet.
 
 
 ### Useful resources consulted
