@@ -11,4 +11,4 @@ A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeon
 - Electron.js's [documentation](https://www.electronjs.org/docs/latest/tutorial/ipc) on inter-process communication
 - Clouwood Studio's [guide](https://clouwood.com/the-ultimate-guide-to-electron-with-react/) to using Electron with React
 - W3Schools's [tutorial](https://www.w3schools.com/howto/howto_js_dropdown.asp) on creating dropdown menus
-- This [guide](https://www.geeksforgeeks.org/persisting-data-in-electronjs/) to persisting data in Electron.js from GeeksforGeeks
+- This [Reddit](https://www.reddit.com/r/electronjs/comments/10dh3lz/what_is_the_proper_way_to_permanently_store_data/) thread, and particularly user `moonwave99`'s solution for storing persistent data in Electron
