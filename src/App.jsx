@@ -30,10 +30,11 @@ const testTurns = [
   }
 ];
 
-function App({ message }) {
+function App({ savedTheme }) {
 
-  //test code for passing information from main to renderer process
-  console.log(message);
+  //test code for persistent storage
+  console.log(savedTheme);
+  
 
   // Index state for iterating through turns state
   const [index, setIndex] = useState(0);
@@ -77,11 +78,14 @@ function App({ message }) {
   const currentTurnRef = useRef();
 
 
-  const [theme, setTheme] = useState();
+  const [theme, setTheme] = useState(savedTheme);
 
   useEffect(() => {
     document.body.className = theme;
+    //writes to disk
+    window.dataStoreAPI.saveTheme(theme);
   }, [theme]);
+
 
 
 

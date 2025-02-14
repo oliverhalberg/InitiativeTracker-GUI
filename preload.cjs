@@ -1,6 +1,7 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
-contextBridge.exposeInMainWorld('test', {
-    onTestMessage: (callback) => ipcRenderer.on('test', (_event, value) => callback(value)),
-    message: "hi"
-})
+contextBridge.exposeInMainWorld('dataStoreAPI', {
+    saveTheme: (theme) => ipcRenderer.send('saveTheme', theme),
+    loadTheme: () => ipcRenderer.invoke('loadTheme')
+});
+

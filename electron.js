@@ -1,10 +1,44 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
 import isDev from 'electron-is-dev';
-import path from 'node:path';
+import path from 'path';
+import fs from 'fs';
 const __dirname = import.meta.dirname;
+//import settings, { set } from 'electron-settings';
+//import Store from 'electron-store';
+
+//Store.initRenderer();
+
+const USER_DATA_PATH = path.join(app.getPath("userData"), 'user_data.json');
+
+//write to data store
+async function handleLoadStore() {
+  try{
+    if(fs.existsSync(USER_DATA_PATH)){
+      const data = fs.readFileSync(USER_DATA_PATH, 'utf-8');
+      console.log("loaded data: ");
+      console.log(JSON.parse(data));
+      return (JSON.parse(data)).theme;
+    }
+    else{
+      console.log("no file found");
+      return 'default';
+    }
+  }
+  catch (error){
+    console.log("Error retrieving user data", error);
+    return null;
+  }
+}
+//read from data store
+async function handleWriteStore(event, theme) {
+  console.log("writing " + theme);
+  fs.writeFileSync(USER_DATA_PATH, JSON.stringify({theme: theme}));
+}
+
+let win;
 
 function createWindow() {
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
@@ -16,8 +50,9 @@ function createWindow() {
     minHeight: 600
   });
 
-  win.webContents.send('test', "hi");
-
+  // settings.setSync('test', {
+  //   message: 'this is a test'
+  // });
 
   if (isDev){
     win.loadURL('http://localhost:5173');
@@ -29,5 +64,8 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+  ipcMain.handle('loadTheme', handleLoadStore);
+  ipcMain.on('saveTheme', handleWriteStore);
   createWindow();
+  //win.webContents.send('test', 'hello');
 });

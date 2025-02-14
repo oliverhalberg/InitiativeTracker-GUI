@@ -4,7 +4,7 @@ const ThemePicker = ({ updateTheme }) => {
     return (
         <div>
             <div id="themePickerOptions" className="themeOptionsContent">
-                <button onClick={()=>updateTheme("")}>Default</button>
+                <button onClick={()=>updateTheme("default")}>Default</button>
                 <button onClick={()=>updateTheme("test")}>blue</button>
                 <button>More filler</button>
                 <button>More filler</button>

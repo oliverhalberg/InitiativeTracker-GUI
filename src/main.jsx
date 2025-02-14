@@ -3,13 +3,18 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { ThemeProvider } from './components/context/ThemeContext.jsx'
+//import Store from 'electron-store';
 
-let msg = 'b';
+//const store = new Store();
 
-//window.test.onTestMessage((value) => msg = value);
+let data = await window.dataStoreAPI.loadTheme();
+if (data === null) {
+  data = 'default';
+}
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <App message={window.test.message}/>
+      <App savedTheme={data}/>
   </StrictMode>,
 )
