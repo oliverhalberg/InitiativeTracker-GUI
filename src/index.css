@@ -197,17 +197,23 @@ button:focus-visible {
   display: none;
   position: fixed;
   right: 5%;
-  bottom: 12%;
+  bottom: 14%;
   overflow-y: scroll;
-  height: 20%;
-  width: 110px;
+  height: fit-content;
+  max-height: 10%;
+  width: 60%;
   font-size: .8em;
   text-align: center;
+  border: solid var(--button-highlight-color);
 }
 
 .themeOptionsContent p:hover {
   /* Placeholder */
   border: solid var(--button-highlight-color);
+}
+
+.themeOptionsContent button {
+  margin: 0.2em 0.5em;
 }
 
 .show {
