@@ -205,6 +205,7 @@ button:focus-visible {
   font-size: .8em;
   text-align: center;
   border: solid var(--button-highlight-color);
+  background-color: var(--global-background);
 }
 
 .themeOptionsContent p:hover {
