@@ -35,6 +35,39 @@ body.pink {
   --input-background: #ff66ff;
 }
 
+body.forest {
+  --global-background: #1e1d1d;
+  --turn-background: rgba(38, 49, 199, 0.806);
+  --text-color: rgba(255, 255, 255, 0.87);
+  --current-turn-border: rgb(227, 227, 227);
+  --button-highlight-color: rgb(227, 227, 227);
+  --button-background-color: #515151;
+  --input-border: rgba(255, 255, 255, 0.717);
+  --input-background: #1e1d1d;
+}
+
+body.neon {
+  --global-background: #1e1d1d;
+  --turn-background: rgba(38, 49, 199, 0.806);
+  --text-color: rgba(255, 255, 255, 0.87);
+  --current-turn-border: rgb(227, 227, 227);
+  --button-highlight-color: rgb(227, 227, 227);
+  --button-background-color: #515151;
+  --input-border: rgba(255, 255, 255, 0.717);
+  --input-background: #1e1d1d;
+}
+
+body.mint {
+  --global-background: #ffe6ff;
+  --turn-background: #ff99ff;
+  --text-color: black;
+  --current-turn-border: white;
+  --button-highlight-color: white;
+  --button-background-color: #ff66ff;
+  --input-border: rgba(255, 255, 255, 0.717);
+  --input-background: #ff66ff;
+}
+
 body {
   color: var(--text-color);
   background-color: var(--global-background);
