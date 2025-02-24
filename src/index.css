@@ -36,14 +36,14 @@ body.pink {
 }
 
 body.forest {
-  --global-background: #1e1d1d;
-  --turn-background: rgba(38, 49, 199, 0.806);
+  --global-background: #0f2f12;
+  --turn-background: rgb(32, 91, 43);
   --text-color: rgba(255, 255, 255, 0.87);
   --current-turn-border: rgb(227, 227, 227);
   --button-highlight-color: rgb(227, 227, 227);
-  --button-background-color: #515151;
-  --input-border: rgba(255, 255, 255, 0.717);
-  --input-background: #1e1d1d;
+  --button-background-color: #413929;
+  --input-border: rgba(255, 255, 255, 0.821);
+  --input-background: #0f2f12;
 }
 
 body.neon {
