@@ -1,11 +1,12 @@
 body.dark {
-  --global-background: #242424;
-  --turn-background: rgba(0, 128, 0, 0.806);
+  --global-background: #1e1d1d;
+  --turn-background: rgba(38, 49, 199, 0.806);
   --text-color: rgba(255, 255, 255, 0.87);
   --current-turn-border: rgb(227, 227, 227);
   --button-highlight-color: rgb(227, 227, 227);
-  --button-background-color: #1a1a1a;
+  --button-background-color: #515151;
   --input-border: rgba(255, 255, 255, 0.717);
+  --input-background: #1e1d1d;
 }
 
 body.test {
@@ -20,6 +21,7 @@ body.pink {
   --button-highlight-color: white;
   --button-background-color: #ff66ff;
   --input-border: rgba(255, 255, 255, 0.717);
+  --input-background: #ff66ff;
 }
 
 body {
@@ -124,7 +126,7 @@ button:focus-visible {
 #addTurnForm input[type=text], input[type=number] {
   margin: 0.3em;
   width: 100%;
-  background-color: var(--button-background-color);
+  background-color: var(--input-background);
   border: solid var(--input-border);
   line-height: 1.5;
   color: var(--text-color);
@@ -133,7 +135,7 @@ button:focus-visible {
 #addTurnForm input[type=text]:focus, input[type=number]:focus {
   border-color: var(--button-highlight-color);
   outline: none;
-  background-color: var(--button-background-color);
+  background-color: var(--input-background);
   color: var(--text-color);
 }
 
@@ -221,6 +223,7 @@ button:focus-visible {
   text-align: center;
   border: solid var(--button-highlight-color);
   background-color: var(--global-background);
+  border-radius: 10px;
 }
 
 .themeOptionsContent p:hover {
