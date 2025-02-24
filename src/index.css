@@ -13,6 +13,17 @@ body.test {
   --global-background: blue;
 }
 
+body.light {
+  --global-background: rgb(231, 231, 231);
+  --turn-background: rgba(38, 49, 199, 0.806);
+  --text-color: black;
+  --current-turn-border: rgba(38, 49, 199, 0.806);
+  --button-highlight-color: black;
+  --button-background-color: #787878;
+  --input-border: black;
+  --input-background: white;
+}
+
 body.pink {
   --global-background: #ffe6ff;
   --turn-background: #ff99ff;
