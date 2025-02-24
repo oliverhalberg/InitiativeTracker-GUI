@@ -58,14 +58,14 @@ body.neon {
 }
 
 body.mint {
-  --global-background: #ffe6ff;
-  --turn-background: #ff99ff;
+  --global-background: #b5f1d5;
+  --turn-background: #89fad5;
   --text-color: black;
   --current-turn-border: white;
   --button-highlight-color: white;
-  --button-background-color: #ff66ff;
+  --button-background-color: #57f6c1;
   --input-border: rgba(255, 255, 255, 0.717);
-  --input-background: #ff66ff;
+  --input-background: #b5f1d5;
 }
 
 body {
