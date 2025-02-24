@@ -34,7 +34,7 @@ function App({ savedTheme }) {
 
   //test code for persistent storage
   console.log(savedTheme);
-  
+
 
   // Index state for iterating through turns state
   const [index, setIndex] = useState(0);
@@ -124,15 +124,18 @@ function App({ savedTheme }) {
       prevIndId = turns[index].id;
       // console.log(`Previous ind id: ${prevIndId}`);
     }
-    setTurns(prevTurns => [
-      ...prevTurns,
-      {
-        name,
-        initiative,
-        id: nextPlayerId.current++
-      }
-    ]);
-    setTurns(prevTurns => prevTurns.sort(compareTurns));
+    //prevents adding of blank turns
+    if (name !== '' && initiative !== '') {
+      setTurns(prevTurns => [
+        ...prevTurns,
+        {
+          name,
+          initiative,
+          id: nextPlayerId.current++
+        }
+      ]);
+      setTurns(prevTurns => prevTurns.sort(compareTurns));
+    }
     //handles off-by-one errors when a new turn is added that appears before the current turn in the initiative order
     //NOTE: Is this an error? That is desired behavior before the first round. So maybe this correcting only occurs if
     // the user has clicked "Next Turn" at least once? (boolean state isRunning updated to True once clicked, never set to False)
@@ -218,7 +221,7 @@ function App({ savedTheme }) {
           <AddTurnForm addTurn={handleAddTurn} />
         </div>
       </div>
-      <ThemePicker updateTheme={setTheme}/>
+      <ThemePicker updateTheme={setTheme} />
     </div>
   )
 }
