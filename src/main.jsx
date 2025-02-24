@@ -9,7 +9,7 @@ import { ThemeProvider } from './components/context/ThemeContext.jsx'
 
 let data = await window.dataStoreAPI.loadTheme();
 if (data === null) {
-  data = 'default';
+  data = 'dark';
 }
 
 
