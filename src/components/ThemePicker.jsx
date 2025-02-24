@@ -5,11 +5,11 @@ const ThemePicker = ({ updateTheme }) => {
         <div>
             <div id="themePickerOptions" className="themeOptionsContent">
                 <button onClick={()=>updateTheme("dark")}>Dark</button>
-                <button onClick={()=>updateTheme("test")}>blue</button>
                 <button onClick={()=>updateTheme("light")}>Light</button>
                 <button onClick={()=>updateTheme("pink")}>Pink</button>
-                <button>More filler</button>
-                <button>Yet more filler text</button>
+                <button onClick={()=>updateTheme("forest")}>Forest</button>
+                <button onClick={()=>updateTheme("neon")}>Neon</button>
+                <button onClick={()=>updateTheme("mint")}>Mint</button>
             </div>
             <button id="themePickerButton"
                 onClick={() => { document.getElementById("themePickerOptions").classList.toggle("show") }}
