@@ -48,12 +48,12 @@ body.forest {
 
 body.neon {
   --global-background: #1e1d1d;
-  --turn-background: rgba(38, 49, 199, 0.806);
+  --turn-background: rgba(231, 12, 12, 0.806);
   --text-color: rgba(255, 255, 255, 0.87);
   --current-turn-border: rgb(227, 227, 227);
-  --button-highlight-color: rgb(227, 227, 227);
-  --button-background-color: #515151;
-  --input-border: rgba(255, 255, 255, 0.717);
+  --button-highlight-color: #05f9d8;
+  --button-background-color: #0e0bd9;
+  --input-border: #05f9d8;
   --input-background: #1e1d1d;
 }
 
@@ -258,7 +258,7 @@ button:focus-visible {
   display: none;
   position: fixed;
   right: 5%;
-  bottom: 14%;
+  bottom: 15%;
   overflow-y: scroll;
   height: fit-content;
   max-height: 10%;
@@ -276,7 +276,7 @@ button:focus-visible {
 }
 
 .themeOptionsContent button {
-  margin: 0.2em 0.5em;
+  margin: 0.5em;
 }
 
 .show {
