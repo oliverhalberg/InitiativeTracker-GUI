@@ -1,3 +1,5 @@
+
+/* Color Themes */
 body.dark {
   --global-background: #1e1d1d;
   --turn-background: rgba(38, 49, 199, 0.806);
@@ -7,10 +9,6 @@ body.dark {
   --button-background-color: #515151;
   --input-border: rgba(255, 255, 255, 0.717);
   --input-background: #1e1d1d;
-}
-
-body.test {
-  --global-background: blue;
 }
 
 body.light {
@@ -68,6 +66,8 @@ body.mint {
   --input-background: #b5f1d5;
 }
 
+/* Global */
+
 body {
   color: var(--text-color);
   background-color: var(--global-background);
@@ -121,15 +121,13 @@ button {
   text-align: center;
   color: var(--text-color);
 }
+
 button:hover {
   border-color: var(--button-highlight-color);
 }
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
 
-/* General layout */
+/* Layout */
+
 #appSubContainer {
   display: flex;
 }
@@ -162,6 +160,8 @@ button:focus-visible {
 #turnButtons button {
   width: 140px;
 }
+
+/* Add Turn Form */
 
 #addTurnForm {
   margin: 0.5em 0em;
@@ -203,6 +203,7 @@ button:focus-visible {
   border-color: var(--button-highlight-color);
 }
 
+/* Turn */
 
 .turn {
   display: flex;
@@ -246,6 +247,8 @@ button:focus-visible {
   background-color: var(--button-background-color);
 }
 
+/* Theme Picker */
+
 #themePickerButton {
   position: fixed;
   right: 5%;
@@ -282,16 +285,3 @@ button:focus-visible {
 .show {
   display: block;
 }
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
