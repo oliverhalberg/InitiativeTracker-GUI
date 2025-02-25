@@ -1,6 +1,4 @@
-
 const ThemePicker = ({ updateTheme }) => {
-
     return (
         <div>
             <div id="themePickerOptions" className="themeOptionsContent">
