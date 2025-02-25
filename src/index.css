@@ -15,12 +15,12 @@ body.test {
 
 body.light {
   --global-background: rgb(231, 231, 231);
-  --turn-background: rgba(38, 49, 199, 0.806);
+  --turn-background: rgb(49, 63, 249);
   --text-color: black;
-  --current-turn-border: rgba(38, 49, 199, 0.806);
-  --button-highlight-color: black;
+  --current-turn-border: white;
+  --button-highlight-color: white;
   --button-background-color: #787878;
-  --input-border: black;
+  --input-border: rgb(192, 192, 192);
   --input-background: white;
 }
 
@@ -59,7 +59,7 @@ body.neon {
 
 body.mint {
   --global-background: #b5f1d5;
-  --turn-background: #89fad5;
+  --turn-background: #57f6c1;
   --text-color: black;
   --current-turn-border: white;
   --button-highlight-color: white;
