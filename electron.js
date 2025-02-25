@@ -3,10 +3,6 @@ import isDev from 'electron-is-dev';
 import path from 'path';
 import fs from 'fs';
 const __dirname = import.meta.dirname;
-//import settings, { set } from 'electron-settings';
-//import Store from 'electron-store';
-
-//Store.initRenderer();
 
 const USER_DATA_PATH = path.join(app.getPath("userData"), 'user_data.json');
 
@@ -21,7 +17,8 @@ async function handleLoadStore() {
     }
     else{
       console.log("no file found");
-      return 'default';
+      //dark theme is the default
+      return 'dark';
     }
   }
   catch (error){
@@ -50,22 +47,16 @@ function createWindow() {
     minHeight: 600
   });
 
-  // settings.setSync('test', {
-  //   message: 'this is a test'
-  // });
-
   if (isDev){
     win.loadURL('http://localhost:5173');
   }
   else {
     win.loadFile("dist/index.html");
   }
-
 }
 
 app.whenReady().then(() => {
   ipcMain.handle('loadTheme', handleLoadStore);
   ipcMain.on('saveTheme', handleWriteStore);
   createWindow();
-  //win.webContents.send('test', 'hello');
 });
