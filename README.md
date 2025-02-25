@@ -1,11 +1,22 @@
 # Initiative Tracker GUI
 
-A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeons and Dragons. 
+A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeons and Dragons. Available for macOS, Windows, and Linux.
 
 ## Status: In beta testing - v1.0.2 is released.
 - Bug fixes and new features are being added, working towards v1.1.0
-- Note: There is plenty of old and/or commented-out code in this project; I have not gone through and cleaned it up yet.
+- Note: There is still plenty of old and/or commented-out code in this project; I have not gone through and cleaned all of it up yet.
 
+## Changelog
+
+### v1.1.0 (not yet released)
+- Enabled window resizing
+- Added responsive layout
+- Added color themes and the ability to switch between them, as well as persistent storage of color theme choice
+- Bug fixes:
+    - Stepping backwards through turns now decrements the round counter, to a minumum of 1
+    - Users can no longer add blank turns
+    - Fixed bug where the app would crash if the "Next" button was clicked without any turns added
+    - Set some max width values to prevent text overflowing off of the screen and/or beyond reasonable boundaries
 
 ### Useful resources consulted
 - Electron.js's [tutorial](https://www.electronjs.org/docs/latest/tutorial/tutorial-prerequisites)
