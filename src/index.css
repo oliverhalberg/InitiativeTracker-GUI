@@ -39,14 +39,14 @@ body.forest {
   --text-color: rgba(255, 255, 255, 0.87);
   --current-turn-border: rgb(227, 227, 227);
   --button-highlight-color: rgb(227, 227, 227);
-  --button-background-color: #413929;
+  --button-background-color: #312a1c;
   --input-border: rgba(255, 255, 255, 0.821);
   --input-background: #0f2f12;
 }
 
 body.neon {
   --global-background: #1e1d1d;
-  --turn-background: rgba(231, 12, 12, 0.806);
+  --turn-background: rgb(255, 160, 8);
   --text-color: rgba(255, 255, 255, 0.87);
   --current-turn-border: rgb(227, 227, 227);
   --button-highlight-color: #05f9d8;
@@ -155,6 +155,7 @@ button:hover {
 
 #sidebar p {
   font-size: 120%;
+  word-break: break-all;
 }
 
 #turnButtons button {
@@ -222,6 +223,7 @@ button:hover {
 
 .turn p {
   padding: 0em 0.5em;
+  word-break: break-all;
 }
 
 .turnInitiative {
