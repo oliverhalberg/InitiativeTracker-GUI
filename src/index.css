@@ -2,7 +2,8 @@
 /* Color Themes */
 body.dark {
   --global-background: #1e1d1d;
-  --turn-background: rgba(38, 49, 199, 0.806);
+  /* --turn-background: rgba(38, 49, 199, 0.806); */
+  --turn-background: #0b462e;
   --text-color: rgba(255, 255, 255, 0.87);
   --current-turn-border: rgb(227, 227, 227);
   --button-highlight-color: rgb(227, 227, 227);
@@ -12,12 +13,13 @@ body.dark {
 }
 
 body.light {
-  --global-background: rgb(231, 231, 231);
-  --turn-background: rgb(49, 63, 249);
+  --global-background: rgb(244, 243, 243);
+  /* --turn-background: rgb(49, 63, 249); */
+  --turn-background: #85b4e6;
   --text-color: black;
   --current-turn-border: white;
   --button-highlight-color: white;
-  --button-background-color: #787878;
+  --button-background-color: #bfbfbf;
   --input-border: rgb(192, 192, 192);
   --input-background: white;
 }
@@ -30,7 +32,7 @@ body.pink {
   --button-highlight-color: white;
   --button-background-color: #ff66ff;
   --input-border: rgba(255, 255, 255, 0.717);
-  --input-background: #ff66ff;
+  --input-background: #fd89fd;
 }
 
 body.forest {
@@ -44,15 +46,15 @@ body.forest {
   --input-background: #0f2f12;
 }
 
-body.neon {
-  --global-background: #1e1d1d;
-  --turn-background: rgb(255, 160, 8);
-  --text-color: rgba(255, 255, 255, 0.87);
-  --current-turn-border: rgb(227, 227, 227);
-  --button-highlight-color: #05f9d8;
-  --button-background-color: #0e0bd9;
-  --input-border: #05f9d8;
-  --input-background: #1e1d1d;
+body.ocean {
+  --global-background: #002e4f;
+  --turn-background: #01588d;
+  --text-color: white;
+  --current-turn-border: #b8d1e7;
+  --button-highlight-color: #b8d1e7;
+  --button-background-color: #01588d;
+  --input-border: #a8cae6;
+  --input-background: #002e4f;
 }
 
 body.mint {
