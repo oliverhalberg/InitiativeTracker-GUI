@@ -6,18 +6,20 @@ const __dirname = import.meta.dirname;
 
 const USER_DATA_PATH = path.join(app.getPath("userData"), 'user_data.json');
 
-//write to data store
+//Write to data store
 async function handleLoadStore() {
   try{
     if(fs.existsSync(USER_DATA_PATH)){
       const data = fs.readFileSync(USER_DATA_PATH, 'utf-8');
+     /* Uncomment for testing data persistence:  
       console.log("loaded data: ");
       console.log(JSON.parse(data));
+    */
       return (JSON.parse(data)).theme;
     }
     else{
       console.log("no file found");
-      //dark theme is the default
+      //Dark theme is the default if no saved data is present
       return 'dark';
     }
   }
@@ -26,9 +28,12 @@ async function handleLoadStore() {
     return null;
   }
 }
-//read from data store
+
+//Read from data store
 async function handleWriteStore(event, theme) {
-  console.log("writing " + theme);
+/* Uncomment for testing data persistence:
+  console.log("writing " + theme)
+*/
   fs.writeFileSync(USER_DATA_PATH, JSON.stringify({theme: theme}));
 }
 

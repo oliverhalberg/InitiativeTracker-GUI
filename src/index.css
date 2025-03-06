@@ -2,7 +2,6 @@
 /* Color Themes */
 body.dark {
   --global-background: #1e1d1d;
-  /* --turn-background: rgba(38, 49, 199, 0.806); */
   --turn-background: #0b462e;
   --text-color: rgba(255, 255, 255, 0.87);
   --current-turn-border: rgb(227, 227, 227);
@@ -14,7 +13,6 @@ body.dark {
 
 body.light {
   --global-background: rgb(244, 243, 243);
-  /* --turn-background: rgb(49, 63, 249); */
   --turn-background: #85b4e6;
   --text-color: black;
   --current-turn-border: white;
@@ -68,7 +66,7 @@ body.mint {
   --input-background: #b5f1d5;
 }
 
-/* Global */
+/* Global (adapted from template provided by Vite) */
 
 body {
   color: var(--text-color);
@@ -277,14 +275,11 @@ button:hover {
   border-radius: 10px;
 }
 
-.themeOptionsContent p:hover {
-  /* Placeholder */
-  border: solid var(--button-highlight-color);
-}
-
 .themeOptionsContent button {
   margin: 0.5em;
 }
+
+/* Hidden Content */
 
 .show {
   display: block;

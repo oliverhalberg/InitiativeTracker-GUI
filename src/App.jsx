@@ -32,10 +32,6 @@ const testTurns = [
 
 function App({ savedTheme }) {
 
-  //test code for persistent storage
-  console.log(savedTheme);
-
-
   // Index state for iterating through turns state
   const [index, setIndex] = useState(0);
 
@@ -70,7 +66,8 @@ function App({ savedTheme }) {
   const [round, setRound] = useState(1);
 
   // Ref to generate ids for turns
-  // Note to self: if using the prefilled test array above, set this to 4 instead of 0
+  // Note to self: if using the prefilled test array above as the starting state of the Turns state, 
+  // set this to 4 instead of 0
   const nextPlayerId = useRef(0); 
 
   // For tracking current turn
@@ -88,7 +85,7 @@ function App({ savedTheme }) {
 
   // Helper function for sorting the Turns state
   const compareTurns = (a, b) => {
-    // data cleaning:
+    // Data cleaning:
     const aInit = parseInt(a.initiative);
     const bInit = parseInt(b.initiative);
     const aName = a.name.toLowerCase();
@@ -115,7 +112,7 @@ function App({ savedTheme }) {
   }
 
   const handleAddTurn = (name, initiative) => {
-    //prevents adding of blank turns
+    // Prevents blank turns from being added
     if (name !== '' && initiative !== '') {
       setTurns(prevTurns => [
         ...prevTurns,
@@ -166,7 +163,7 @@ function App({ savedTheme }) {
       <div id='appSubContainer'>
         <div id='turnsContainer'>
           {
-            // If there is a list of turns, render it
+            // If there is a list of turns, render it as Turn components
             turns ?
               (turns.map(t =>
                 <Turn

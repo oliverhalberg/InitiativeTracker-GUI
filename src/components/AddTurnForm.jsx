@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 const AddTurnForm = ({ addTurn }) => {
-    //refs for user inputs
+    //Refs for user inputs
     const nameInput = useRef();
     const initiativeInput = useRef();
 

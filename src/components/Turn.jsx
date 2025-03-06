@@ -1,4 +1,3 @@
-
 const Turn = ({ name, initiative, id, isCurrentTurn, removeTurn, refProp }) => {
     return (
         <div id={`turn${id}`} className={isCurrentTurn ? "turn currentTurn" : "turn"}>

@@ -6,7 +6,7 @@ import App from './App.jsx'
 let data = await window.dataStoreAPI.loadTheme();
 
 if (data === null) {
-  //dark theme is the default
+  //Dark theme is the default if no saved data is present
   data = 'dark';
 }
 

@@ -4,7 +4,6 @@ A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeon
 
 ## Status: In beta testing - v1.0.2 is released.
 - Bug fixes and new features are being added, working towards v1.1.0
-- Note: There is still plenty of old and/or commented-out code in this project; I have not gone through and cleaned all of it up yet.
 
 ## Changelog
 
@@ -16,7 +15,7 @@ A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeon
     - Stepping backwards through turns now decrements the round counter, to a minumum of 1
     - Users can no longer add blank turns
     - Fixed bug where the app would crash if the "Next" button was clicked without any turns added
-    - Set some max width values to prevent text overflowing off of the screen and/or beyond reasonable boundaries
+    - Set some max width and text break values to prevent text overflowing off of the screen and/or beyond reasonable boundaries
 
 ### Useful resources consulted
 - Electron.js's [tutorial](https://www.electronjs.org/docs/latest/tutorial/tutorial-prerequisites)
