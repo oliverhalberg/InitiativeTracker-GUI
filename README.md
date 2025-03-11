@@ -3,7 +3,7 @@
 A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeons and Dragons. Available for macOS, Windows, and Linux.
 
 ## Status: In beta testing - v1.0.2 is released.
-- Bug fixes and new features are being added, working towards v1.1.0. v1.0.2 (beta) can be found [here](https://github.com/oliverhalberg/InitiativeTracker-GUI/releases/tag/v1.0.2).
+- Bug fixes and new features are being added, working towards v1.1.0.
 
 ## Changelog
 
@@ -16,6 +16,9 @@ A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeon
     - Users can no longer add blank turns
     - Fixed bug where the app would crash if the "Next" button was clicked without any turns added
     - Set some max width and text break values to prevent text overflowing off of the screen and/or beyond reasonable boundaries
+
+### [v1.0.2](https://github.com/oliverhalberg/InitiativeTracker-GUI/releases/tag/v1.0.2) (beta)
+- First working draft of application. This version contains several bugs and is missing some features.
 
 ### Useful resources consulted
 - Electron.js's [tutorial](https://www.electronjs.org/docs/latest/tutorial/tutorial-prerequisites)
