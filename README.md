@@ -17,7 +17,7 @@ A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeon
     - Fixed bug where the app would crash if the "Next" button was clicked without any turns added
     - Set some max width and text break values to prevent text overflowing off of the screen and/or beyond reasonable boundaries
 
-### [v1.0.2](https://github.com/oliverhalberg/InitiativeTracker-GUI/releases/tag/v1.0.2) (beta)
+### [v1.0.2 - beta](https://github.com/oliverhalberg/InitiativeTracker-GUI/releases/tag/v1.0.2)
 - First working draft of application. This version contains several bugs and is missing some features.
 
 ### Useful resources consulted
