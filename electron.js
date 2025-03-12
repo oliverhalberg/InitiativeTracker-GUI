@@ -39,7 +39,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
       additionalArguments: [`--savedTheme=${handleLoadStore()}`],
-      preload: path.join(__dirname, 'preload.cjs')
+      preload: path.join(__dirname, './preload.cjs')
     },
     resizable: true,
     minWidth: 800,
