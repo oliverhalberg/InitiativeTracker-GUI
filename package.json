@@ -1,5 +1,6 @@
 {
   "name": "initiative-tracker-gui",
+  "productName": "Initiative Tracker",
   "private": true,
   "version": "1.1.0",
   "description": "A tool for tracking initiative in TTRPG systems such as Dungeons and Dragons 5e.",
