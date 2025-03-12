@@ -6,8 +6,8 @@ const __dirname = import.meta.dirname;
 
 const USER_DATA_PATH = path.join(app.getPath("userData"), 'user_data.json');
 
-//Write to data store
-async function handleLoadStore() {
+//Read from data store
+function handleLoadStore() {
   try{
     if(fs.existsSync(USER_DATA_PATH)){
       const data = fs.readFileSync(USER_DATA_PATH, 'utf-8');
@@ -25,7 +25,7 @@ async function handleLoadStore() {
   }
 }
 
-//Read from data store
+//Write to data store
 async function handleWriteStore(event, theme) {
   fs.writeFileSync(USER_DATA_PATH, JSON.stringify({theme: theme}));
 }
@@ -38,6 +38,7 @@ function createWindow() {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
+      additionalArguments: [`--savedTheme=${handleLoadStore()}`],
       preload: path.join(__dirname, 'preload.cjs')
     },
     resizable: true,
@@ -54,7 +55,6 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-  ipcMain.handle('loadTheme', handleLoadStore);
   ipcMain.on('saveTheme', handleWriteStore);
   createWindow();
 });
