@@ -11,10 +11,6 @@ async function handleLoadStore() {
   try{
     if(fs.existsSync(USER_DATA_PATH)){
       const data = fs.readFileSync(USER_DATA_PATH, 'utf-8');
-     /* Uncomment for testing data persistence:  
-      console.log("loaded data: ");
-      console.log(JSON.parse(data));
-    */
       return (JSON.parse(data)).theme;
     }
     else{
@@ -31,9 +27,6 @@ async function handleLoadStore() {
 
 //Read from data store
 async function handleWriteStore(event, theme) {
-/* Uncomment for testing data persistence:
-  console.log("writing " + theme)
-*/
   fs.writeFileSync(USER_DATA_PATH, JSON.stringify({theme: theme}));
 }
 
