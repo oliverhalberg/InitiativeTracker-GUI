@@ -26,4 +26,4 @@ A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeon
 - Clouwood Studio's [guide](https://clouwood.com/the-ultimate-guide-to-electron-with-react/) to using Electron with React
 - W3Schools's [tutorial](https://www.w3schools.com/howto/howto_js_dropdown.asp) on creating dropdown menus
 - This Reddit [thread](https://www.reddit.com/r/electronjs/comments/10dh3lz/what_is_the_proper_way_to_permanently_store_data/), and particularly user `moonwave99`'s solution for storing persistent data in Electron
-- This Stack Overflow [thread] (https://stackoverflow.com/questions/76052661using-process-env-to-pass-vars-from-main-process-to-preload-script-in-electron), particularly user `reZach`'s solution for passing values from the main process to the preload script
+- This Stack Overflow [thread](https://stackoverflow.com/questions/76052661using-process-env-to-pass-vars-from-main-process-to-preload-script-in-electron), particularly user `reZach`'s solution for passing values from the main process to the preload script
