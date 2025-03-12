@@ -2,12 +2,12 @@
 
 A GUI tool for tracking turns in turn-based TTRPG combat systems such as Dungeons and Dragons. Available for macOS, Windows, and Linux.
 
-## Status: In beta testing - v1.0.2 is released.
-- Bug fixes and new features are being added, working towards v1.1.0.
+## Status: v1.1.0 is available now!
+- If you encounter any bugs and/or have any suggestions, feel free to create an issue.
 
 ## Changelog
 
-### v1.1.0 (not yet released)
+### [v1.1.0](https://github.com/oliverhalberg/InitiativeTracker-GUI/releases/tag/v1.1.0)
 - Enabled window resizing
 - Added responsive layout
 - Added color themes and the ability to switch between them, as well as persistent storage of color theme choice
